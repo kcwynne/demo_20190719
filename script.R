@@ -8,6 +8,7 @@ library(maps)
 paste0("tar -zxvf trust.no.1.tar.gz") %>% system
 
 #read in the data
+#Hello Ryan
 
 ufos<-read_csv("scrubbed.csv")
 
@@ -23,7 +24,7 @@ ggplot() +
   geom_map(data = WorldData, map = WorldData,
            aes(x = long, y = lat, group = group, map_id=region),
            fill = "grey", colour = "#7f7f7f", size=0.5) + 
-  geom_point(data = ufos, aes(x = longitude, y =latitude),colour = "red")+
+  geom_point(data = ufos, aes(x = longitude, y =latitude),colour = "blue")+
   scale_y_continuous(breaks=c()) +
   scale_x_continuous(breaks=c()) +
   labs( x="Global Distribution\nof UFO sightings", y="")
@@ -68,8 +69,6 @@ mod1<-lm(log(n_sightings) ~ year, data = ufos)
 
 summary(mod1)  
 
-
-#
 
 
 year_grabber<-function(bad_date){
